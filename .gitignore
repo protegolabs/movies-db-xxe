@@ -1,0 +1,9 @@
+.completed_requirements
+lxml/**
+lxml-3.6.3.dist-info/**
+node_modules/**
+.serverless/**
+venv/**
+xxe-dev-myxxe-package.zip
+
+

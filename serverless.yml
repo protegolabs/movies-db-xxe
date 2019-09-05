@@ -1,0 +1,45 @@
+service: protego-demo
+
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
+    - *.zip
+    - .completed_requirements
+    - movies.db
+    - xxe-dev-myxxe-package.zip
+    - serverless.yml
+    - requirements.txt
+    - README.md
+  
+  include:
+    - .env
+    - handler.py
+    - lxml/**
+    - lxml-3.6.3.dist-info/**
+
+plugins:
+  - serverless-python-requirements
+
+provider:
+  name: aws
+  runtime: python2.7
+  region: us-east-1
+  stage: dev
+  timeout: 10
+  memorySize: 128
+
+functions:
+  xxe:
+    handler: handler.lambda_handler
+    environment:
+      movies_db_bucket: movies.db
+    events:
+      - http:
+          path: xml
+          method: post
+          cors: true
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
