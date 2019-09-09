@@ -4,7 +4,6 @@ package:
   exclude:
     - node_modules/**
     - venv/**
-    - *.zip
     - .completed_requirements
     - movies.db
     - xxe-dev-myxxe-package.zip
