@@ -1,4 +1,4 @@
-service: protego-demo
+service: xxe-demo
 
 package:
   exclude:
